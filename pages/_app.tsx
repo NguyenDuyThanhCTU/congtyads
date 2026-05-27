@@ -2,12 +2,10 @@ import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import "swiper/css/bundle";
 import Loading from "../components/Loading/Loading";
-import { AuthProvider } from "../Context/AuthProvider";
-import { DataProvider, useData } from "../Context/DataProvider";
+import { DataProvider } from "../Context/DataProvider";
 import { GlobalProvider } from "../Context/GlobalProvider";
 import { ThemeProvider } from "../Context/ThemeProvider";
 import "../styles/globals.css";
-import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -31,15 +29,12 @@ export default function App({ Component, pageProps }: AppProps) {
     return <Loading percent={percent} />;
   }
   return (
-    <AuthProvider>
-      <ThemeProvider>
-        <DataProvider>
-          <GlobalProvider>
-            <NextNProgress />
-            <Component {...pageProps} />
-          </GlobalProvider>
-        </DataProvider>
-      </ThemeProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <DataProvider>
+        <GlobalProvider>
+          <Component {...pageProps} />
+        </GlobalProvider>
+      </DataProvider>
+    </ThemeProvider>
   );
 }

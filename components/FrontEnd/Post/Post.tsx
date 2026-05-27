@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import styled from "styled-components";
 
 const Container = styled.div<{ color: string }>`
@@ -73,15 +72,13 @@ export default function Post({ data }: { data: any }) {
     }
   }, [data.group]);
   return (
-    <AnimationOnScroll animateIn="animate__fadeInTopLeft">
-      <Container color={color}>
-        <h6>{data.group}</h6>
-        <h1>
-          <Link href={`/posts/${data.title}`}>{data.title}</Link>
-        </h1>
-        <p>{data.subtitle}</p>
-        <img loading="lazy" alt="Loading" src={data.photoURL} />
-      </Container>
-    </AnimationOnScroll>
+    <Container color={color}>
+      <h6>{data.group}</h6>
+      <h1>
+        <Link href={`/posts/${data.title}`}>{data.title}</Link>
+      </h1>
+      <p>{data.subtitle}</p>
+      <img loading="lazy" alt="Loading" src={data.photoURL} />
+    </Container>
   );
 }

@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import { useGetDocument } from "../lib/firebase/service";
+import { mockData } from "../lib/mockData";
 
 interface Props {
   children: React.ReactNode;
@@ -33,33 +33,10 @@ export const DataContext = createContext<DataContextType>({
   question: {},
 });
 export const DataProvider: React.FC<Props> = ({ children }) => {
-  const webinfo = useGetDocument("webinfo");
-  const slidershow = useGetDocument("slidershow");
-  const users = useGetDocument("users");
-  const other = useGetDocument("slidershow");
-  const products = useGetDocument("products");
-  const typeproducts = useGetDocument("typeproducts");
-  const posts = useGetDocument("posts");
-  const videos = useGetDocument("videos");
-  const albums = useGetDocument("albums");
-  const comments = useGetDocument("comments");
-  const feedback = useGetDocument("feedback");
-  const question = useGetDocument("question");
   return (
     <DataContext.Provider
       value={{
-        webinfo,
-        slidershow,
-        users,
-        other,
-        products,
-        typeproducts,
-        posts,
-        videos,
-        albums,
-        comments,
-        feedback,
-        question,
+        ...mockData,
       }}
     >
       {children}

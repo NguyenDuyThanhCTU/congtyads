@@ -8,8 +8,7 @@ import {
 } from "react-icons/bs";
 import { MdSupportAgent } from "react-icons/md";
 import { GiEarthAfricaEurope } from "react-icons/gi";
-import { Grid } from "@mui/material";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import Grid from "../Components/Grid";
 
 const Container = styled.div`
   display: flex;
@@ -94,13 +93,11 @@ export default function AboutList() {
       <Grid container spacing={2}>
         {list?.map((data: any) => (
           <Grid key={data.title} item xs={6} sm={4}>
-            <AnimationOnScroll animateIn="animate__fadeInDown">
-              <Container>
-                <div>{data.icon}</div>
-                <h1>{data.title}</h1>
-                <p>{data.content}</p>
-              </Container>
-            </AnimationOnScroll>
+            <Container>
+              <div>{data.icon}</div>
+              <h1>{data.title}</h1>
+              <p>{data.content}</p>
+            </Container>
           </Grid>
         ))}
       </Grid>

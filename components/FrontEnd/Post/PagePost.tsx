@@ -1,10 +1,11 @@
-import { Grid } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import React from "react";
+import "react-quill/dist/quill.bubble.css";
 import styled from "styled-components";
 import { useData } from "../../../Context/DataProvider";
+import Grid from "../Components/Grid";
 import Post from "./Post";
-import dynamic from "next/dynamic";
-import "react-quill/dist/quill.bubble.css";
+
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const BlogView = styled.div<{ color: string }>`
@@ -29,50 +30,40 @@ const BlogView = styled.div<{ color: string }>`
     width: 100%;
   }
 `;
-export default function PagePost({ title }: { title: any }) {
+
+const getGroupColor = (group?: string) => {
+  switch (group) {
+    case "SỰ KIỆN CÔNG TY":
+      return "#ddd25c";
+    case "HTML & CSS":
+    case "TIN TUYỂN DỤNG":
+      return "#10a992";
+    case "HOẠT ĐỘNG CÔNG TY":
+      return "#1597f4";
+    case "KHUYẾN MÃI HOT":
+      return "#ff5f5f";
+    case "KIẾN THỨC CHUNG":
+      return "#2ddf00";
+    default:
+      return "#1597f4";
+  }
+};
+
+export default function PagePost({ title }: { title: string }) {
   const { posts } = useData();
-  const data = posts?.filter((obj: any) => {
-    return obj.title === title;
-  });
-  const [color, setColor] = useState("");
-  useEffect(() => {
-    switch (data[0]?.group) {
-      case "SỰ KIỆN CÔNG TY":
-        setColor("#ddd25c");
-        break;
-      case "HTML & CSS":
-        setColor("#10a992");
-        break;
-      case "TIN TUYỂN DỤNG":
-        setColor("#10a992");
-        break;
-      case "HOẠT ĐỘNG CÔNG TY":
-        setColor("#1597f4");
-        break;
-      case "KHUYẾN MÃI HOT":
-        setColor("#ff5f5f");
-        break;
-      case "KIẾN THỨC CHUNG":
-        setColor("#2ddf00");
-        break;
-      default:
-        break;
-    }
-  }, [data[0]?.group]);
+  const post = posts?.find((obj: any) => obj.title === title);
+  const color = getGroupColor(post?.group);
+
   return (
     <div className="m-5 md:m-20">
       <Grid container spacing={3}>
         <Grid item sm={8} xs={12}>
           <BlogView color={color}>
-            <h6>{data[0]?.group}</h6>
-            <h1>{data[0]?.title}</h1>
-            <h3>{data[0]?.subtitle}</h3>
-            <img loading="lazy" alt="Loading" src={data[0]?.photoURL} />
-            <ReactQuill
-              value={data[0]?.editor?.value}
-              readOnly={true}
-              theme={"bubble"}
-            />
+            <h6>{post?.group}</h6>
+            <h1>{post?.title}</h1>
+            <h3>{post?.subtitle}</h3>
+            <img loading="lazy" alt="Loading" src={post?.photoURL} />
+            <ReactQuill value={post?.editor?.value} readOnly theme="bubble" />
           </BlogView>
         </Grid>
         <Grid item sm={4} xs={12}>

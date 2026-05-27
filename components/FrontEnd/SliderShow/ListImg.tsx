@@ -17,7 +17,10 @@ const Container = styled.div`
 export default function ListImg() {
   return (
     <Container className="animate__animated animate__bounceInRight">
-      <img alt="Loading" src="https://i.ibb.co/n8dhhp5/3.png" />
+      <img
+        alt="Loading"
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+      />
     </Container>
   );
 }

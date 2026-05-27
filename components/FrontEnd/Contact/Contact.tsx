@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import { Input } from "antd";
 import { AiFillMail } from "react-icons/ai";
 import { BsFillPhoneFill } from "react-icons/bs";
@@ -6,6 +5,7 @@ import { FaUserEdit } from "react-icons/fa";
 import styled from "styled-components";
 import { useData } from "../../../Context/DataProvider";
 import { useTheme } from "../../../Context/ThemeProvider";
+import Grid from "../Components/Grid";
 
 const Container = styled.div`
   width: 100%;

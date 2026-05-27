@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import { AiFillMail, AiFillTwitterSquare } from "react-icons/ai";
 import { BsFillPhoneVibrateFill } from "react-icons/bs";
 import {
@@ -12,6 +11,7 @@ import {
 } from "react-icons/fa";
 import styled from "styled-components";
 import { useData } from "../../../Context/DataProvider";
+import Grid from "../Components/Grid";
 import CopyRight from "./CopyRight";
 
 const Container = styled.div`

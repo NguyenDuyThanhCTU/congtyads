@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { useData } from "../../../Context/DataProvider";
+import Grid from "../Components/Grid";
 import Post from "./Post";
 
 const Container = styled.div`

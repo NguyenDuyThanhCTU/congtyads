@@ -4,6 +4,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 768px) {
+  .mock-grid-item {
+    grid-column: span var(--grid-sm-span) / span var(--grid-sm-span) !important;
+  }
+}
 @layer components {
   .menu-li {
     @apply p-2 border-b border-dotted hover:bg-gray-100 hover:text-blue-500

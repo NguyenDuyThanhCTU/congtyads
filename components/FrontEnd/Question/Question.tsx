@@ -1,8 +1,8 @@
-import { Grid } from "@mui/material";
 import { useState } from "react";
 import { AiOutlineLine, AiOutlinePlus } from "react-icons/ai";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import styled from "styled-components";
+import Grid from "../Components/Grid";
 
 const Container = styled.div`
   cursor: pointer;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const flower = (
-  <img className="w-[25px]" alt="" src="https://i.ibb.co/nbBx8g1/hoa-mai.png" />
+  <img className="w-[25px]" alt="" src="https://placehold.co/25x25/facc15/ffffff.png?text=*" />
 );
 export default function Snow() {
   return (

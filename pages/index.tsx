@@ -23,7 +23,7 @@ export default function Home() {
           name="description"
           content="Công ty ứng dụng truyền thông ADS - Chuyên các dịch vụ Digital Marketing, chạy QC Facebook, Google, Tiktok..."
         />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/logo.PNG" />
       </Head>
       <main>
         <Snow />

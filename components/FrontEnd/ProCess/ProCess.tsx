@@ -1,7 +1,6 @@
-import { Grid } from "@mui/material";
 import React from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import styled from "styled-components";
+import Grid from "../Components/Grid";
 
 const Container = styled.div`
   position: relative;
@@ -120,49 +119,49 @@ export default function ProCess() {
   const list = [
     {
       id: "01",
-      photoURL: "https://i.ibb.co/fYN6Zvm/1.png",
+      photoURL: "https://placehold.co/240x240/2563eb/ffffff.png?text=01",
       title: "Client Brief",
       content: "Nhận yêu cầu từ khách hàng",
     },
     {
       id: "02",
-      photoURL: "https://i.ibb.co/vxxWtyz/2.png",
+      photoURL: "https://placehold.co/240x240/0f766e/ffffff.png?text=02",
       title: "Proposal",
       content: "Đề xuất giải pháp và chiến lược",
     },
     {
       id: "03",
-      photoURL: "https://i.ibb.co/Cn5xY0J/3.png",
+      photoURL: "https://placehold.co/240x240/7c3aed/ffffff.png?text=03",
       title: "Contract",
       content: "Ký kết hợp đồng và thanh toán",
     },
     {
       id: "04",
-      photoURL: "https://i.ibb.co/WnMVQJp/4.png",
+      photoURL: "https://placehold.co/240x240/dc2626/ffffff.png?text=04",
       title: "Planning",
       content: "Lên ý tưởng và kịch bản",
     },
     {
       id: "05",
-      photoURL: "https://i.ibb.co/jkG8Th4/5.png",
+      photoURL: "https://placehold.co/240x240/ea580c/ffffff.png?text=05",
       title: "Production",
       content: "Triển khai, hiện thực hóa ý tưởng",
     },
     {
       id: "06",
-      photoURL: "https://i.ibb.co/vm6K99N/6.png",
+      photoURL: "https://placehold.co/240x240/0891b2/ffffff.png?text=06",
       title: "Editing",
       content: "Nhận feedback và hiệu chỉnh",
     },
     {
       id: "07",
-      photoURL: "https://i.ibb.co/7KSMYgK/7.png",
+      photoURL: "https://placehold.co/240x240/4f46e5/ffffff.png?text=07",
       title: "Report",
       content: "Báo cáo kết quả quá trình",
     },
     {
       id: "08",
-      photoURL: "https://i.ibb.co/8r177th/8.png",
+      photoURL: "https://placehold.co/240x240/16a34a/ffffff.png?text=08",
       title: "Handover",
       content: "Bàn giao sản phẩm và tổng kết",
     },
@@ -172,19 +171,17 @@ export default function ProCess() {
       <Grid container spacing={3}>
         {list?.map((data: any) => (
           <Grid key={data.id} item xs={6} sm={3}>
-            <AnimationOnScroll animateIn="animate__fadeInDown">
-              <Container>
-                <div className="top">
-                  BƯỚC <strong>{data.id}</strong>
-                </div>
-                <div className="content">
-                  <img loading="lazy" alt="Loading" src={data.photoURL} />
-                  <h1>{data.title}</h1>
-                  <p>{data.content}</p>
-                </div>
-                <div className="bottom"></div>
-              </Container>
-            </AnimationOnScroll>
+            <Container>
+              <div className="top">
+                BƯỚC <strong>{data.id}</strong>
+              </div>
+              <div className="content">
+                <img loading="lazy" alt="Loading" src={data.photoURL} />
+                <h1>{data.title}</h1>
+                <p>{data.content}</p>
+              </div>
+              <div className="bottom"></div>
+            </Container>
           </Grid>
         ))}
       </Grid>
