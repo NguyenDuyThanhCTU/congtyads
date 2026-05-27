@@ -8,9 +8,5 @@ const Container = styled.div`
   padding: 20px;
 `;
 export default function CopyRight() {
-  return (
-    <Container>
-      ©2022 All Rights reserved ADS Company | Designed by Luan Dev ADS Company
-    </Container>
-  );
+  return <Container>©2022 All Rights reserved ADS Company</Container>;
 }

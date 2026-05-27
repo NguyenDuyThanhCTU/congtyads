@@ -26,7 +26,7 @@ export default function Home() {
         <link rel="icon" href="/logo.PNG" />
       </Head>
       <main>
-        <Snow />
+        {/* <Snow /> */}
         <Header />
         <SliderShow />
         <About />

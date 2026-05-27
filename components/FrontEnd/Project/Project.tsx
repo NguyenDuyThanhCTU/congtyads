@@ -45,7 +45,7 @@ export default function Project({ data }: { data: any }) {
       <img loading="lazy" alt="Loading" src={data.photoURL} />
       <div>
         <p>{data.title}</p>
-        <h1>{data.link}</h1>
+        {/* <h1>{data.link}</h1> */}
       </div>
     </Container>
   );

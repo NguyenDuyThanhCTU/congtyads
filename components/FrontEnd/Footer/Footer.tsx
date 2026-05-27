@@ -132,20 +132,15 @@ export default function Footer() {
                 <span>
                   <FaMapMarkedAlt />
                 </span>
-                Trụ sở : 385C1, đường Trần Nam Phú, phường An Khánh, quận Ninh
-                Kiều, Thành phố Cần Thơ.
+                Trụ sở : 306E, Đường Hoàng Quốc Việt, Phường Tân An, Thành phố
+                Cần Thơ
               </p>
-              <p>
-                <span>
-                  <FaSitemap />
-                </span>
-                Chi nhánh : 131 đường Nguyễn Huệ, Phường 2, Thành phố Vĩnh Long.
-              </p>
+
               <p>
                 <span>
                   <FaBlenderPhone />
                 </span>
-                Tổng đài : 02923 89 44 89 ( 07:30~17:00 T2-T7, 08:00~12:00 CN)
+                Tổng đài : 091 190 6349 ( 07:30~17:00 T2-T7, 08:00~12:00 CN)
               </p>
               <p>
                 <span>
@@ -164,7 +159,7 @@ export default function Footer() {
                 <span>
                   <BsFillPhoneVibrateFill />
                 </span>
-                Hotline : 0901 356 070
+                Hotline : 091 190 6349
               </p>
               <p>
                 <span>
